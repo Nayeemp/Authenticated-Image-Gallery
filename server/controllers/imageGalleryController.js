@@ -5,7 +5,7 @@ const decodeToken = require('../helpers/imageGalleryHelpers');
 
 const UPLOADS_FOLDER = './public/images/';
 
-const upload = async (req, res) => {
+const create = async (req, res) => {
     try {
         // console.log('req.file = ', req.file);
         // console.log('req.body = ', req.body);
@@ -21,7 +21,7 @@ const upload = async (req, res) => {
     }
 };
 
-const all = async (req, res) => {
+const read = async (req, res) => {
     try {
         const { email } = decodeToken(req.headers);
         const images = await Image.find({ uploader: email });
@@ -32,7 +32,7 @@ const all = async (req, res) => {
     }
 };
 
-const single = async (req, res) => {
+const remove = async (req, res) => {
     try {
         const { image } = req.params;
         // console.log('req.params= ', req.params);
@@ -46,4 +46,4 @@ const single = async (req, res) => {
     }
 };
 
-module.exports = { upload, all, single };
+module.exports = { create, read, remove };

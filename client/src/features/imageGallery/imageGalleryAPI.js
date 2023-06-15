@@ -9,13 +9,13 @@ export const imageGalleryAPI = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
 
     fetchImages: builder.query({
-      query: () => ({ url: '/images/all' }),
+      query: () => ({ url: '/imagegallery/images' }),
       providesTags: ['Images']
     }),
 
     addImage: builder.mutation({
       query: (data) => ({
-        url: '/images/upload',
+        url: '/imagegallery/images',
         method: 'POST',
         body: data,
         formData: true
@@ -25,7 +25,7 @@ export const imageGalleryAPI = apiSlice.injectEndpoints({
 
     deleteImage: builder.mutation({
       query: (data) => ({
-        url: `/images/single/${data}`,
+        url: `/imagegallery/images/${data}`,
         method: 'DELETE'
       }),
       invalidatesTags: ['Images']

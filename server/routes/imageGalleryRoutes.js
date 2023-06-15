@@ -4,11 +4,11 @@ const express = require('express');
 const checkLogin = require('../middlewares/checkLogin');
 const fileUploader = require('../utils/fileUploader');
 
-const { upload, all, single } = require('../controllers/imageGalleryController');
+const { create, read, remove } = require('../controllers/imageGalleryController');
 
 const Route = express.Router();
-Route.post('/upload', checkLogin, fileUploader.single('image'), upload);
-Route.get('/all', checkLogin, all);
-Route.delete('/single/:image', checkLogin, single);
+Route.post('/images', checkLogin, fileUploader.single('image'), create);
+Route.get('/images', checkLogin, read);
+Route.delete('/images/:image', checkLogin, remove);
 
 module.exports = Route;

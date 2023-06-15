@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static(`${__dirname}/public/`));
 
 app.use('/auth', authRoutes);
-app.use('/images', imageGalleryRoutes);
+app.use('/imagegallery', imageGalleryRoutes);
 
 app.get('/', (req, res) => {
     res.send('Welcome to root Server');

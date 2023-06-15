@@ -5,6 +5,7 @@ const fs = require('fs');
 // File upload folder
 const UPLOADS_FOLDER = './public/images/';
 // যে fileটি upload variable কে import করে ব্যবহার করবে অর্থাৎ যেই file এ run হবে সেই fileটি যে folder এ অবস্থিত, সেই folder এ upload folder তৈরি হবে
+// আমরা যেহেতু index.js file run করে server এর সকল কার্যক্রম করি, তাই UPLOADS_FOLDER এর path root folder থেকে count হবে
 
 // define the storage
 const storage = multer.diskStorage({
