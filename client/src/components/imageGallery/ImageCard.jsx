@@ -24,8 +24,8 @@ function ImageCard({ image }) {
   return (
     <div className="max-w-sm bg-white shadow-lg duration-500 hover:scale-105 hover:shadow-xl relative">
       { deleteOperation && (
-      <div className="absolute text-xl font-bold text-red-500 bg-green-500 px-2 right-0 hover:bg-red-500 hover:text-green-500 cursor-pointer">
-        <i className="fa fa-times" onClick={() => deleteImage(image.image)} />
+      <div className="absolute text-xl font-bold text-red-500 bg-green-500 px-2 right-0 hover:bg-red-500 hover:text-green-500 cursor-pointer" onClick={() => deleteImage(image.image)} >
+        <i className="fa fa-times" />
       </div>
       )}
 
